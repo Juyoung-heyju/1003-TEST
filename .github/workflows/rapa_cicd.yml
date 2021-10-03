@@ -55,6 +55,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./
-          file: ./Dockerfile  # 청회는 cat으로 넣어주는 방법을 사용함
+          file: ./Dockerfile  # 청회는 job에다가 넣어주는 방법을 사용함
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}JAVA:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}java:latest
