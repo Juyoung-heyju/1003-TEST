@@ -45,7 +45,7 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           dockerfile: ./Dockerfile
-          image: gcr.io/[your-project]/[image-name]
+          image: gcr.io/${{ secrets.GCP_PROJECT_ID }}/rapa:latest
           service_account_key: ${{ secrets.GCP_CREDENTIALS}}
 
       - name: get-credentials
