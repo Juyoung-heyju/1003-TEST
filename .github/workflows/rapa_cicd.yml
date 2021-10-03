@@ -57,4 +57,11 @@ jobs:
           context: ./
           file: ./Dockerfile  # 청회는 job에다가 넣어주는 방법을 사용함
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/java:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/java:latest #latest를 한 이유는? deploy image 가 새로운 버전을 자동 업데이트 시키기 위해 사용한다.
+
+        - name: get-credentials
+          uses: google-github-actions/get-gke-credentials@main
+          with:
+            cluster_name: cluster-1
+            location: us-central1-c
+            credentials: ${{ secrets.gcp_credentials }}
