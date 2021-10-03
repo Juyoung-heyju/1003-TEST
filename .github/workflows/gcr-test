@@ -46,7 +46,7 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           dockerfile: ./Dockerfile
           image: gcr.io/[your-project]/[image-name]
-          service_account_key: ${{ secrets.GCLOUD_AUTH }}
+          service_account_key: ${{ secrets.GCP_CREDENTIALS}}
 
       - name: get-credentials
         uses: google-github-actions/get-gke-credentials@main
